@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area of Rectangle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>Finding area of a rectangle.</h3>
+        <div class="row">
+            <div>
+                <label for="length">Length</label>
+                <input type="text" id="length" name="length">
+            </div>
+            <div>
+                <label for="width">Width</label>
+                <input type="text" id="width" name="width">
+            </div>
+        </div>
+        <button id="calc">Calculate</button>
+        <button id="clear">Clear</button>
+        <p></p>
+    </div>
+</div>
+<script>
+    const length = document.getElementById('length');
+    const width = document.getElementById('width');
+    const ans = document.querySelector('p');
+    const calculateButton = document.getElementById('calc');
+    const clearButton = document.getElementById('clear');
+
+    function checkIsValid(num){
+        if (isNaN(num)){
+            return false
+        }
+        if (num <= 0){
+            return false
+        }
+        return true
+    }
+
+    function area(length, width){
+        console.log(`${length} * ${width}`)
+    }
+
+    calculateButton.addEventListener('click', function(e){
+        let sideLength = +length.value;
+        let sideWidth = +width.value;
+        if (!checkIsValid(sideLength) || !checkIsValid(sideWidth)){
+            ans.textContent = 'Invalid Inputs';
+            return;
+        }
+        console.log(area);
+    })
+
+    clearButton.addEventListener('click', function(e){
+        length.value = " ";
+        width.value = " ";
+    })
+</script>
+</body>
+</html>
