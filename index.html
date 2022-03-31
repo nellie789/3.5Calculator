@@ -41,19 +41,20 @@
         return true
     }
 
-    function area(length, width){
-        console.log(`${length} * ${width}`)
-    }
-
     calculateButton.addEventListener('click', function(e){
         let sideLength = +length.value;
         let sideWidth = +width.value;
+
         if (!checkIsValid(sideLength) || !checkIsValid(sideWidth)){
             ans.textContent = 'Invalid Inputs';
             return;
+        } else{
+            let findArea = sideLength*sideWidth;
+            console.log(findArea);
         }
-        console.log(area);
     })
+
+    //-
 
     clearButton.addEventListener('click', function(e){
         length.value = " ";
