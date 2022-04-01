@@ -48,13 +48,16 @@
         if (!checkIsValid(sideLength) || !checkIsValid(sideWidth)){
             ans.textContent = 'Invalid Inputs';
             return;
-        } else{
-            let findArea = sideLength*sideWidth;
-            console.log(findArea);
+        }
+        if (checkIsValid(sideLength) || checkIsValid(sideWidth)){
+            ans.textContent = 'Valid Inputs';
+            let totalArea = Number(length * width);
+            console.log(totalArea);
+            return;
         }
     })
 
-    //-
+    //I can't figure out how to log out the area of a rectangle. Can you let me know what the code is.
 
     clearButton.addEventListener('click', function(e){
         length.value = " ";
